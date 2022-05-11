@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<link rel="icon" type="image/png" href="img/epee.png" />
+		
+		<!-- A commenter -->
+		<script src="./js/accueil.js"></script>		
+		
+		<!-- A commenter  -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		
+		<!-- A commenter -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Kufam&display=swap" rel="stylesheet"> 
+
+		<!-- A commenter -->		
+		<link href="css/stylePrincipal.css" rel="stylesheet"> 
+
+		<title>Aventure le jeu</title>
+			
+	</head>
+
+    <body>
+
+		<div class="container-fluid ">
+			<div class="row d-flex h-100" >
+
+				<div class="col mt-4 align-self-center">
+					<h1>AVENTURE</h1><h2>Le Jeu</h2>
+					<p class="txtPresentration">Bienvenue dans Aventure, jeu de rôle en ligne dans lequel vous incarnerez un avatar. 
+					Cet avatar arrivera dans un monde dont il ne connaît rien avec un équipement limité.</p>
+					<p class="txtPresentration">Son seul but sera de survivre, de progresser et de trouver la clé permettant de passer dans un autre montre. 
+					Dix mondes s’enchainent ainsi les uns après les autres, mais un seul aventurier pourra atteindre le dixième monde.</p> 
+					<p class="txtPresentration">Etes-vous prêt à tenter l’expérience ?</p>	
+					<p><br>
+				</div>
+
+				<div class="col">
+						<img class="auCentre" src="./img/LogoAventure.jpg" alt="">
+
+						<h2>Déjà inscrit !</h2>
+						<form action="connection.php" method="post" id="formConnexion">
+							<div class="form-group row" >
+								<div class="col">
+									<input id="form1Login" placeholder="Adresse mail" class="form-control">
+									<div id="form1LoginError"></div>
+								</div>
+							</div>
+							<div class="form-group row" >
+								<div class="col"><input type="password" id="form1Mdp" placeholder="Mot de passe" class="form-control">
+									<div id="form1MdpError" ></div>
+								</div>
+							</div>
+							<input type="submit" id="btnConnecter" value="Se Connecter" name="btnConnection"/>  
+						</form>
+				</div>
+			
+			
+				<div class="col">
+					<h2>Nouveau Joueur ?<br/>Créer votre avatar</h2>
+					<form  action="aventure.php" method="post" id="formInscription">
+						<div class="form-group row" >
+							<div class="col">
+								<input id="form2AvatarNom" size="40" placeholder="Nom de l'avatar" class="form-control">
+								<div id="form2AvatarNomError"></div>
+							</div>
+						</div>
+						<div class="form-group row" >
+							<div class=" col">
+								<select id="form2Genre" class="form-control">
+									<option value="0" selected>Genre...</option>
+									<option value="1">Féminin</option>
+									<option value="2">Masculin</option>
+								</select>
+							</div>
+							<div id="form2GenreError"></div>
+						</div>
+						<!-- Force	-->
+						<div class="form-group row" >
+							<div class="col-3">
+								<label for="form2force" class="col-form-label">Force</label></div>
+							<div class="col-5">
+								<div class="input-group">
+							        <div class="input-group-prepend">
+										<div class="input-group-text" id="inputGroupPrepend1"><div onclick="modifCar('force',-1);" style="cursor:pointer;"><img src="./img/arrow_left.png" alt="" title="Moins" /></div></div>
+									</div>
+									<input id="form2force"  placeholder="Force" class="form-control" value=10>
+									<div class="input-group-append">
+										<div class="input-group-text" id="inputGroupAppend1"><div onclick="modifCar('force',1);" style="cursor:pointer;"><img src="./img/arrow_right.png" alt="" title="Plus" /></div></div>	
+									</div>
+								</div>
+							</div>
+							<div class="col-4">
+								<input id="form2forceBM" class="form-control" value=0 disabled>
+							</div>
+						</div>
+						<!-- Agilité -->
+						<div class="form-group row" >
+							<div class="col-3">
+								<label for="form2agilite" class="col-form-label">Agilité</label></div>
+							<div class="col-5">
+								<div class="input-group">
+							        <div class="input-group-prepend">
+										<div class="input-group-text" id="inputGroupPrepend2"><div onclick="modifCar('agilite',-1);" style="cursor:pointer;"><img src="./img/arrow_left.png" alt="" title="Moins" /></div></div>
+									</div>
+									<input id="form2agilite"  placeholder="Agilité" class="form-control" value=10>
+									<div class="input-group-append">
+										<div class="input-group-text" id="inputGroupAppend2"><div onclick="modifCar('agilite',1);" style="cursor:pointer;"><img src="./img/arrow_right.png" alt="" title="Plus" /></div></div>	
+									</div>
+								</div>
+							</div>
+							<div class="col-4">
+								<input id="form2agiliteBM" class="form-control" value=0 disabled>
+							</div>
+						</div>
+						<!-- Dextérité -->
+						<div class="form-group row" >
+							<div class="col-3">
+								<label for="form2dexterite" class="col-form-label">Dextérité</label></div>
+							<div class="col-5">
+								<div class="input-group">
+							        <div class="input-group-prepend">
+										<div class="input-group-text" id="inputGroupPrepend3"><div onclick="modifCar('dexterite',-1);" style="cursor:pointer;"><img src="./img/arrow_left.png" alt="" title="Moins" /></div></div>
+									</div>
+									<input id="form2dexterite"  placeholder="Dextérité" class="form-control" value=10>
+									<div class="input-group-append">
+										<div class="input-group-text" id="inputGroupAppend3"><div onclick="modifCar('dexterite',1);" style="cursor:pointer;"><img src="./img/arrow_right.png" alt="" title="Plus" /></div></div>	
+									</div>
+								</div>
+							</div>
+							<div class="col-4">
+								<input id="form2dexteriteBM" class="form-control" value=0 disabled>
+							</div>
+						</div>
+						<!-- Constitution -->
+						<div class="form-group row" >
+							<div class="col-3">
+								<label for="form2constitution" class="col-form-label">Constitution</label></div>
+							<div class="col-5">
+								<div class="input-group">
+							        <div class="input-group-prepend">
+										<div class="input-group-text" id="inputGroupPrepend4"><div onclick="modifCar('constitution',-1);" style="cursor:pointer;"><img src="./img/arrow_left.png" alt="" title="Moins" /></div></div>
+									</div>
+									<input id="form2constitution"  placeholder="Constitution" class="form-control" value=10>
+									<div class="input-group-append">
+										<div class="input-group-text" id="inputGroupAppend4"><div onclick="modifCar('constitution',1);" style="cursor:pointer;"><img src="./img/arrow_right.png" alt="" title="Plus" /></div></div>	
+									</div>
+								</div>
+							</div>
+							<div class="col-4">
+								<input id="form2constitutionBM" class="form-control" value=0 disabled>
+							</div>
+						</div>
+						<!-- Magie -->
+						<div class="form-group row" >
+							<div class="col-3">
+								<label for="form2magie" class="col-form-label">Magie</label></div>
+							<div class="col-5">
+								<div class="input-group">
+							        <div class="input-group-prepend">
+										<div class="input-group-text" id="inputGroupPrepend5"><div onclick="modifCar('magie',-1);" style="cursor:pointer;"><img src="./img/arrow_left.png" alt="" title="Moins" /></div></div>
+									</div>
+									<input id="form2magie"  placeholder="Magie" class="form-control" value=10>
+									<div class="input-group-append">
+										<div class="input-group-text" id="inputGroupAppend5"><div onclick="modifCar('magie',1);" style="cursor:pointer;"><img src="./img/arrow_right.png" alt="" title="Plus" /></div></div>	
+									</div>
+									<div id="form2CaracError"></div>
+								</div>
+							</div>
+							<div class="col-4">
+								<input id="form2magieBM" class="form-control" value=0 disabled>
+							</div>
+						</div>
+						
+						<!-- Login Mot de passe -->
+
+							<div class="form-group row" >
+								<div class="col">
+									<input id="form2Login" placeholder="Adresse mail" class="form-control">
+									<div id="form2LoginError"></div>
+								</div>
+							</div>
+							<div class="form-group row" >
+								<div class="col"><input type="password" id="form2Mdp" placeholder="Mot de passe" class="form-control">
+									<div id="form2MdpError" ></div>
+								</div>
+							</div>
+						<input type="submit" id="btnInscrire" value="S'incrire" name="Inscription"> 
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			validationInscription();
+			validationConnexion();			
+		</script>
+
+
+		
+    </body>
+</html>

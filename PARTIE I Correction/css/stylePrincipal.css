@@ -1,0 +1,65 @@
+body {
+  font-family: kufam, verdana;
+}
+
+h1 {
+		font-size : 200%;
+		text-align: center;
+		letter-spacing : 0.2em;
+}
+
+h2 {
+		font-size : 150%;
+		text-align: center;
+		letter-spacing : 0.1em;
+		margin : 1em;
+
+}
+
+input {
+	text-align: center;
+}
+
+.txtPresentration
+{
+	font-size : 120%;
+	text-align: justify;
+	margin : 1em;
+	color: red;
+
+}
+
+IMG.auCentre {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formErrorMsg{
+	padding: 0.5em;
+	font-size: 80%;	
+	color: white;
+	background-color: #900;
+}
+table
+{
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.tr /* Mettre une bordure sur les td ET les th */
+{
+	border: 1px solid red;
+}
+
+.exploree
+{
+	border: 1px solid green;
+	width: 300px;
+	height: 100px; 
+}
+.nonDecouvert
+{
+	border: 1px solid blue;
+	width: 300px;
+	height: 100px; 
+}
